@@ -9,14 +9,14 @@ app.get("/", (req, res) => {
 
 app.get("/add/:name", async (req, res) => {
 	const name = req.params.name;
-	await db("people").insert({ name });
-	const newPerson = await db("people").first().where({ name });
+	await knex("people").insert({ name });
+	const newPerson = await knex("people").first().where({ name });
 
 	res.send(newPerson);
 });
 
 app.get("/list", async (req, res) => {
-	const people = await db("people").select();
+	const people = await knex("people").select();
 
 	res.send(people);
 });
