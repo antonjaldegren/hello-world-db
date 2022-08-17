@@ -1,26 +1,27 @@
 {
-  "dependencies": {
-    "express": "^4.18.1",
-    "knex": "^2.2.0",
-    "pg": "^8.7.3",
-    "sqlite3": "^5.0.11"
-  },
-  "name": "hello-world-express-db",
-  "description": "",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cme-osuka/hello-world-db.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cme-osuka/hello-world-db/issues"
-  },
-  "homepage": "https://github.com/cme-osuka/hello-world-db#readme"
+	"dependencies": {
+		"express": "^4.18.1",
+		"knex": "^2.2.0",
+		"pg": "^8.7.3",
+		"sqlite3": "^5.0.11"
+	},
+	"name": "hello-world-express-db",
+	"description": "",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cme-osuka/hello-world-db.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cme-osuka/hello-world-db/issues"
+	},
+	"homepage": "https://github.com/cme-osuka/hello-world-db#readme"
 }
