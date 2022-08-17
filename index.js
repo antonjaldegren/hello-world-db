@@ -9,8 +9,9 @@ app.get("/", (req, res) => {
 
 app.get("/add/:name", async (req, res) => {
 	const name = req.params.name;
-	await knex("people").insert({ name });
-	const newPerson = await knex("people").first().where({ name });
+	const newPerson = await knex("people")
+		.returning(["id", "name"])
+		.insert({ name });
 
 	res.send(newPerson);
 });
