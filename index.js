@@ -9,8 +9,8 @@ app.get("/", (req, res) => {
 
 app.get("/add/:name", async (req, res) => {
 	const name = req.params.name;
-	await db("messages").insert({ name });
-	const newPerson = await db("messages").first().where({ name });
+	await db("people").insert({ name });
+	const newPerson = await db("people").first().where({ name });
 
 	res.send(newPerson);
 });
