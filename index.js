@@ -7,24 +7,16 @@ app.get("/", (req, res) => {
 	res.send(process.env.GREETING);
 });
 
-app.get("/add/:name", (req, res) => {
-	// Ersätt person med den skapade personen från databasen
-	const person = {
-		id: 0,
-		name: "Ryan",
-	};
+app.get("/add/:name", async (req, res) => {
+	const name = req.params.name;
+	await db("messages").insert({ name });
+	const newPerson = await db("messages").first().where({ name });
 
-	res.send(person);
+	res.send(newPerson);
 });
 
-app.get("/list", (req, res) => {
-	// Ersätt people med alla personer från databasen
-	const people = [
-		{
-			id: 0,
-			name: "Ryan",
-		},
-	];
+app.get("/list", async (req, res) => {
+	const people = await db("people").select();
 
 	res.send(people);
 });
